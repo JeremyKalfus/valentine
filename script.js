@@ -1,6 +1,7 @@
 const noButton = document.getElementById("noBtn");
 const yesButton = document.getElementById("yesBtn");
 const yesMessage = document.getElementById("yesMessage");
+const cursorAura = document.getElementById("cursorAura");
 
 const EDGE_PADDING = 16;
 const AVOID_RADIUS = 170;
@@ -124,12 +125,44 @@ function placeNoButtonDefault() {
   setNoPosition(defaultX, defaultY);
 }
 
+const auraState = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2,
+  targetX: window.innerWidth / 2,
+  targetY: window.innerHeight / 2,
+  scale: 0.75,
+  targetScale: 0.75
+};
+
+function animateAura() {
+  if (!cursorAura) {
+    return;
+  }
+
+  auraState.x += (auraState.targetX - auraState.x) * 0.18;
+  auraState.y += (auraState.targetY - auraState.y) * 0.18;
+  auraState.scale += (auraState.targetScale - auraState.scale) * 0.22;
+
+  cursorAura.style.transform =
+    `translate(${auraState.x}px, ${auraState.y}px) translate(-50%, -50%) scale(${auraState.scale})`;
+
+  window.requestAnimationFrame(animateAura);
+}
+
 noButton.addEventListener("mouseenter", handleNoEscape);
 noButton.addEventListener("pointerdown", handleNoEscape);
 noButton.addEventListener("touchstart", handleNoEscape, { passive: false });
 noButton.addEventListener("click", handleNoEscape);
 
 document.addEventListener("pointermove", (event) => {
+  if (cursorAura && event.pointerType !== "touch") {
+    const speed = Math.hypot(event.movementX || 0, event.movementY || 0);
+    auraState.targetX = event.clientX;
+    auraState.targetY = event.clientY;
+    auraState.targetScale = clamp(0.82 + speed / 34, 0.82, 1.18);
+    document.body.classList.add("cursor-active");
+  }
+
   const rect = noButton.getBoundingClientRect();
   const centerX = rect.left + rect.width / 2;
   const centerY = rect.top + rect.height / 2;
@@ -140,6 +173,15 @@ document.addEventListener("pointermove", (event) => {
   }
 });
 
+document.addEventListener("pointerleave", () => {
+  if (!cursorAura) {
+    return;
+  }
+
+  auraState.targetScale = 0.75;
+  document.body.classList.remove("cursor-active");
+});
+
 yesButton.addEventListener("click", () => {
   yesMessage.classList.add("show");
 });
@@ -147,6 +189,9 @@ yesButton.addEventListener("click", () => {
 window.addEventListener("resize", () => {
   const position = readNoPosition();
   setNoPosition(position.x, position.y);
+  auraState.targetX = clamp(auraState.targetX, 0, window.innerWidth);
+  auraState.targetY = clamp(auraState.targetY, 0, window.innerHeight);
 });
 
 placeNoButtonDefault();
+animateAura();
