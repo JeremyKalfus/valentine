@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Bondist";
+  src: url("./assets/fonts/Bondist.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --headline-font: "The Seasons", "Iowan Old Style", "Times New Roman", serif;
+  --headline-font: "Bondist", "The Seasons", "Iowan Old Style", "Times New Roman", serif;
   --button-font: "TT Commons Pro Expanded", "Avenir Next Condensed", "Arial Narrow", sans-serif;
   --text: #ffffff;
   --glass-border: rgba(255, 255, 255, 0.24);
@@ -101,6 +109,8 @@ h1 {
 .no-button {
   top: 70.4vh;
   left: 65.5vw;
+  transition: left 0.13s linear, top 0.13s linear, background-color 0.15s ease;
+  will-change: left, top;
 }
 
 .yes-message {
