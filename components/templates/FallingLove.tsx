@@ -134,7 +134,7 @@ export default function FallingLove({ page }: Props) {
               burst();
             }}
           >
-            {page.buttonText || "Press to rain text"}
+            {page.actionButtonText || "Press to rain text"}
           </button>
         </div>
       </article>

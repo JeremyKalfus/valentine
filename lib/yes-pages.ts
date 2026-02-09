@@ -13,6 +13,7 @@ const yesPageFrontmatterSchema = z
     subtitle: z.string().optional(),
     template: z.enum(yesTemplates),
     buttonText: z.string().optional(),
+    actionButtonText: z.string().optional(),
     body: z.string().optional(),
     fallingText: z.string().optional(),
     languagePhrases: z.array(z.string().min(1)).optional(),
