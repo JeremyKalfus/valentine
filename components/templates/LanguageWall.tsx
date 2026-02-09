@@ -66,16 +66,16 @@ export default function LanguageWall({ page, nextRandomHref }: Props) {
       : DEFAULT_LANGUAGE_PHRASES;
 
   return (
-    <div className="template-shell">
+    <div className="yes-shell language-wall-mode">
       <section className="language-wall" aria-hidden="true">
         <p className="language-wall-text">{buildLanguageWallText(phrases)}</p>
       </section>
 
-      <div className="language-wall-actions">
-        <Link className="action-link-pill" href={nextRandomHref}>
+      <div className="yes-actions fixed-actions">
+        <Link className="yes-action-btn" href={nextRandomHref}>
           {page.buttonText || "Another random page"}
         </Link>
-        <Link className="action-link" href="/">
+        <Link className="yes-action-link" href="/">
           Back to first page
         </Link>
       </div>

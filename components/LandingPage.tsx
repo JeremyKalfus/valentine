@@ -225,8 +225,8 @@ export default function LandingPage() {
   return (
     <>
       <div className="cursor-aura" ref={cursorAuraRef} aria-hidden="true" />
-      <main className="page">
-        <h1 className="hero-title">
+      <main className="home-page">
+        <h1 className="home-title">
           Rebecca, will you be
           <br />
           my valentine?

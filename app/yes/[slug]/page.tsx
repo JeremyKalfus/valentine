@@ -18,15 +18,15 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (!page) {
     return (
-      <main className="empty-wrap">
-        <section className="empty-card">
-          <h1 className="note-title">This page was not found.</h1>
-          <p className="note-body">The selected valentine page does not exist yet.</p>
-          <div className="actions">
-            <Link className="action-link-pill" href="/yes/random">
+      <main className="yes-shell">
+        <section className="yes-card">
+          <h1 className="yes-title">This page was not found.</h1>
+          <p className="yes-body">The selected valentine page does not exist yet.</p>
+          <div className="yes-actions">
+            <Link className="yes-action-btn" href="/yes/random">
               Try another random page
             </Link>
-            <Link className="action-link" href="/">
+            <Link className="yes-action-link" href="/">
               Back to first page
             </Link>
           </div>

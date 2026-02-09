@@ -95,7 +95,7 @@ export default function FallingLove({ page, nextRandomHref }: Props) {
   }, []);
 
   return (
-    <div className="template-shell">
+    <div className="yes-shell love-rain-mode">
       <div className="love-rain-layer" aria-hidden="true">
         {items.map((item) => {
           const style = {
@@ -113,15 +113,15 @@ export default function FallingLove({ page, nextRandomHref }: Props) {
         })}
       </div>
 
-      <article className="note-card">
-        <p className="note-kicker">Valentine Update</p>
-        <h1 className="note-title">{page.title}</h1>
-        {page.subtitle ? <h2 className="note-subtitle">{page.subtitle}</h2> : null}
-        {page.body ? <p className="note-body">{page.body}</p> : null}
+      <article className="yes-card">
+        <p className="yes-kicker">Valentine Update</p>
+        <h1 className="yes-title">{page.title}</h1>
+        {page.subtitle ? <h2 className="yes-subtitle">{page.subtitle}</h2> : null}
+        {page.body ? <p className="yes-body">{page.body}</p> : null}
 
-        <div className="actions">
+        <div className="yes-actions">
           <button
-            className="action-btn"
+            className="yes-action-btn"
             type="button"
             onPointerDown={(event) => {
               event.preventDefault();
@@ -138,10 +138,10 @@ export default function FallingLove({ page, nextRandomHref }: Props) {
           >
             {page.buttonText || "Press to rain text"}
           </button>
-          <Link className="action-link-pill" href={nextRandomHref}>
+          <Link className="yes-action-btn" href={nextRandomHref}>
             Next random page
           </Link>
-          <Link className="action-link" href="/">
+          <Link className="yes-action-link" href="/">
             Back to first page
           </Link>
         </div>
