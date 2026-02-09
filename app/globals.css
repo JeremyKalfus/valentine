@@ -251,14 +251,9 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   z-index: 6;
-  width: min(94vw, 660px);
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1.2px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 14px 34px rgba(118, 64, 83, 0.34);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  width: auto;
+  max-width: calc(100vw - 24px);
+  padding: 0;
 }
 
 .yes-nav-btn {
@@ -494,8 +489,7 @@ body {
   }
 
   .yes-nav-bar {
-    width: min(94vw, 420px);
-    padding: 11px 12px;
+    width: auto;
     gap: 9px;
   }
 
