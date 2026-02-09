@@ -246,17 +246,54 @@ body {
   bottom: calc(16px + env(safe-area-inset-bottom));
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   z-index: 6;
-  padding: 10px 14px;
+  width: min(94vw, 660px);
+  padding: 14px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1.2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 14px 34px rgba(118, 64, 83, 0.34);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.yes-nav-btn {
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 10px 22px;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(126, 67, 87, 0.24);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.yes-nav-btn:hover,
+.yes-nav-btn:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 22px rgba(126, 67, 87, 0.3);
+}
+
+.yes-nav-link {
+  color: rgba(255, 255, 255, 0.96);
+  font-family: var(--body-font);
+  font-size: 0.98rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.yes-nav-link:hover,
+.yes-nav-link:focus-visible {
+  color: #fff;
 }
 
 .love-rain-layer {
@@ -343,25 +380,6 @@ body {
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-}
-
-.language-wall-mode .fixed-actions {
-  position: fixed;
-  right: clamp(10px, 2.4vw, 24px);
-  bottom: clamp(10px, 2.6vw, 24px);
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  margin: 0;
-  z-index: 4;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .time-since {
@@ -472,6 +490,17 @@ body {
   .no-button {
     top: 75vh;
     left: 63.5vw;
+  }
+
+  .yes-nav-bar {
+    width: min(94vw, 420px);
+    padding: 11px 12px;
+    gap: 9px;
+  }
+
+  .yes-nav-btn,
+  .yes-nav-link {
+    font-size: 0.93rem;
   }
 
   .time-grid {

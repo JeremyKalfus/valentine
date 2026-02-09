@@ -14,10 +14,10 @@ export default function YesPageScaffold({ page, nextRandomHref, children }: Prop
     <>
       {children}
       <nav className="yes-nav-bar" aria-label="Random page navigation">
-        <Link className="yes-action-btn" href={nextRandomHref}>
+        <Link className="yes-nav-btn" href={nextRandomHref}>
           {page.buttonText || "Another random page"}
         </Link>
-        <Link className="yes-action-link" href="/">
+        <Link className="yes-nav-link" href="/">
           Back to first page
         </Link>
       </nav>
