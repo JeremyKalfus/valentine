@@ -33,7 +33,7 @@ export default async function YesSlugPage({ params }: PageProps) {
   if (page.template === "falling-love") {
     return (
       <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
-        <FallingLove page={page} nextRandomHref={nextRandomHref} />
+        <FallingLove page={page} />
       </YesPageScaffold>
     );
   }
@@ -41,7 +41,7 @@ export default async function YesSlugPage({ params }: PageProps) {
   if (page.template === "language-wall") {
     return (
       <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
-        <LanguageWall page={page} nextRandomHref={nextRandomHref} />
+        <LanguageWall page={page} />
       </YesPageScaffold>
     );
   }
@@ -49,14 +49,14 @@ export default async function YesSlugPage({ params }: PageProps) {
   if (page.template === "first-text-timer") {
     return (
       <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
-        <FirstTextTimer page={page} nextRandomHref={nextRandomHref} />
+        <FirstTextTimer page={page} />
       </YesPageScaffold>
     );
   }
 
   return (
     <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
-      <NoteTemplate page={page} nextRandomHref={nextRandomHref} />
+      <NoteTemplate page={page} />
     </YesPageScaffold>
   );
 }

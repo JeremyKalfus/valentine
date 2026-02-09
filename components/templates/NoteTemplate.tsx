@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -6,10 +5,9 @@ import type { YesPage } from "@/lib/yes-pages";
 
 type Props = {
   page: YesPage;
-  nextRandomHref: string;
 };
 
-export default function NoteTemplate({ page, nextRandomHref }: Props) {
+export default function NoteTemplate({ page }: Props) {
   return (
     <div className="yes-shell">
       <article className="yes-card">
@@ -19,14 +17,6 @@ export default function NoteTemplate({ page, nextRandomHref }: Props) {
         {page.body ? <p className="yes-body">{page.body}</p> : null}
         {page.markdown ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{page.markdown}</ReactMarkdown> : null}
 
-        <div className="yes-actions">
-          <Link className="yes-action-btn" href={nextRandomHref}>
-            {page.buttonText || "Another random page"}
-          </Link>
-          <Link className="yes-action-link" href="/">
-            Back to first page
-          </Link>
-        </div>
       </article>
     </div>
   );

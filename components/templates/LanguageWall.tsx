@@ -1,10 +1,7 @@
-import Link from "next/link";
-
 import type { YesPage } from "@/lib/yes-pages";
 
 type Props = {
   page: YesPage;
-  nextRandomHref: string;
 };
 
 const DEFAULT_LANGUAGE_PHRASES = [
@@ -59,7 +56,7 @@ function buildLanguageWallText(phrases: string[]) {
   return pieces.join("");
 }
 
-export default function LanguageWall({ page, nextRandomHref }: Props) {
+export default function LanguageWall({ page }: Props) {
   const phrases =
     page.languagePhrases && page.languagePhrases.length > 0
       ? page.languagePhrases
@@ -70,15 +67,6 @@ export default function LanguageWall({ page, nextRandomHref }: Props) {
       <section className="language-wall" aria-hidden="true">
         <p className="language-wall-text">{buildLanguageWallText(phrases)}</p>
       </section>
-
-      <div className="yes-actions fixed-actions">
-        <Link className="yes-action-btn" href={nextRandomHref}>
-          {page.buttonText || "Another random page"}
-        </Link>
-        <Link className="yes-action-link" href="/">
-          Back to first page
-        </Link>
-      </div>
     </div>
   );
 }

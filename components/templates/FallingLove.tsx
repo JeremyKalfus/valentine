@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
@@ -8,7 +7,6 @@ import type { YesPage } from "@/lib/yes-pages";
 
 type Props = {
   page: YesPage;
-  nextRandomHref: string;
 };
 
 type FallingItem = {
@@ -25,7 +23,7 @@ const LOVE_INTERVAL_MS = 115;
 const DEFAULT_LOVE_TEXT =
   "I love you sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo much";
 
-export default function FallingLove({ page, nextRandomHref }: Props) {
+export default function FallingLove({ page }: Props) {
   const [items, setItems] = useState<FallingItem[]>([]);
   const timerRef = useRef<number | null>(null);
   const nextIdRef = useRef(0);
@@ -138,12 +136,6 @@ export default function FallingLove({ page, nextRandomHref }: Props) {
           >
             {page.buttonText || "Press to rain text"}
           </button>
-          <Link className="yes-action-btn" href={nextRandomHref}>
-            Next random page
-          </Link>
-          <Link className="yes-action-link" href="/">
-            Back to first page
-          </Link>
         </div>
       </article>
     </div>

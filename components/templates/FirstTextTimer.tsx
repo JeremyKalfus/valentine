@@ -1,13 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import type { YesPage } from "@/lib/yes-pages";
 
 type Props = {
   page: YesPage;
-  nextRandomHref: string;
 };
 
 type TimerParts = {
@@ -35,7 +33,7 @@ function calculateElapsed(startDate: Date, nowMs: number): TimerParts {
   };
 }
 
-export default function FirstTextTimer({ page, nextRandomHref }: Props) {
+export default function FirstTextTimer({ page }: Props) {
   const startIso = page.startIso || DEFAULT_START_ISO;
   const startDate = useMemo(() => new Date(startIso), [startIso]);
   const [nowMs, setNowMs] = useState(() => Date.now());
@@ -100,15 +98,6 @@ export default function FirstTextTimer({ page, nextRandomHref }: Props) {
             <p className="text-stamp">{timestamp} (America/New_York)</p>
           </div>
         </section>
-
-        <div className="yes-actions">
-          <Link className="yes-action-btn" href={nextRandomHref}>
-            {page.buttonText || "Another random page"}
-          </Link>
-          <Link className="yes-action-link" href="/">
-            Back to first page
-          </Link>
-        </div>
       </article>
     </div>
   );
