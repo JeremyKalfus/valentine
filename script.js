@@ -1,6 +1,7 @@
+const pagesApi = window.ValentinePages || null;
+
 const noButton = document.getElementById("noBtn");
 const yesButton = document.getElementById("yesBtn");
-const yesMessage = document.getElementById("yesMessage");
 const cursorAura = document.getElementById("cursorAura");
 
 const EDGE_PADDING = 16;
@@ -76,7 +77,7 @@ function pushAwayFromYes(x, y, width, height) {
   };
 }
 
-function runNoButton(pointerX = null, pointerY = null) {
+function runNoButton(pointerX, pointerY) {
   const previous = readNoPosition();
   const metrics = getNoMetrics();
   const centerX = previous.x + metrics.width / 2;
@@ -105,7 +106,6 @@ function runNoButton(pointerX = null, pointerY = null) {
     return;
   }
 
-  // If the button gets cornered against an edge, sidestep in a random direction.
   const angle = randomInRange(0, Math.PI * 2);
   const sidestepX = previous.x + Math.cos(angle) * RUN_BOOST_STEP;
   const sidestepY = previous.y + Math.sin(angle) * RUN_BOOST_STEP;
@@ -115,7 +115,7 @@ function runNoButton(pointerX = null, pointerY = null) {
 
 function handleNoEscape(event) {
   event.preventDefault();
-  runNoButton(event.clientX ?? null, event.clientY ?? null);
+  runNoButton(event.clientX, event.clientY);
 }
 
 function placeNoButtonDefault() {
@@ -123,6 +123,18 @@ function placeNoButtonDefault() {
   const defaultX = window.innerWidth * 0.655 - metrics.width / 2;
   const defaultY = window.innerHeight * 0.704 - metrics.height / 2;
   setNoPosition(defaultX, defaultY);
+}
+
+function goToRandomPage() {
+  if (pagesApi && typeof pagesApi.getRandomPage === "function") {
+    const next = pagesApi.getRandomPage();
+    if (next) {
+      window.location.href = `./page.html?page=${encodeURIComponent(next.id)}`;
+      return;
+    }
+  }
+
+  window.location.href = "./page.html?page=love-rain";
 }
 
 const auraState = {
@@ -182,9 +194,7 @@ document.addEventListener("pointerleave", () => {
   document.body.classList.remove("cursor-active");
 });
 
-yesButton.addEventListener("click", () => {
-  yesMessage.classList.add("show");
-});
+yesButton.addEventListener("click", goToRandomPage);
 
 window.addEventListener("resize", () => {
   const position = readNoPosition();

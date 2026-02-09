@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Note</title>
+    <link rel="stylesheet" href="./page.css" />
+    <script src="./content/pages.js" defer></script>
+    <script src="./page.js" defer></script>
+  </head>
+  <body>
+    <div class="love-rain-layer" id="loveRainLayer" aria-hidden="true"></div>
+    <section class="language-wall" id="languageWall" aria-hidden="true">
+      <p class="language-wall-text" id="languageWallText"></p>
+    </section>
+
+    <main class="note-page">
+      <article class="note-card">
+        <p class="note-kicker" id="noteKicker">Valentine Update</p>
+        <h1 id="noteTitle">You said yes.</h1>
+        <h2 id="noteSubtitle">Best answer in the history of answers.</h2>
+        <p class="note-body" id="noteBody">
+          I had a feeling you would make the correct decision. Happy Valentine's Day, Rebecca.
+        </p>
+
+        <section class="time-since" id="timeSincePanel" aria-live="polite">
+          <p class="time-label">Time passed since your first text:</p>
+          <div class="time-grid">
+            <div class="time-cell">
+              <p class="time-value" id="timeDays">0</p>
+              <p class="time-unit">Days</p>
+            </div>
+            <div class="time-cell">
+              <p class="time-value" id="timeHours">0</p>
+              <p class="time-unit">Hours</p>
+            </div>
+            <div class="time-cell">
+              <p class="time-value" id="timeMinutes">0</p>
+              <p class="time-unit">Minutes</p>
+            </div>
+            <div class="time-cell">
+              <p class="time-value" id="timeSeconds">0</p>
+              <p class="time-unit">Seconds</p>
+            </div>
+          </div>
+          <div class="text-log">
+            <p class="text-line"><span class="text-person">Rebecca:</span> "<span id="rebeccaFirstText">hello</span>"</p>
+            <p class="text-line"><span class="text-person">You:</span> "<span id="myFirstText">who's this</span>"</p>
+            <p class="text-stamp" id="firstTextStamp">November 17, 2025 12:21 AM</p>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button id="randomAgainBtn" class="action-btn" type="button">Show me another</button>
+          <a id="nextRandomLink" class="action-link hidden-link" href="./page.html">Next random page</a>
+          <a class="action-link" href="./index.html">Back to first page</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
