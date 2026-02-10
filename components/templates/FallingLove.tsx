@@ -112,10 +112,7 @@ export default function FallingLove({ page }: Props) {
       </div>
 
       <article className="yes-card">
-        <p className="yes-kicker">Valentine Update</p>
         <h1 className="yes-title">{page.title}</h1>
-        {page.subtitle ? <h2 className="yes-subtitle">{page.subtitle}</h2> : null}
-        {page.body ? <p className="yes-body">{page.body}</p> : null}
 
         <div className="yes-actions">
           <button

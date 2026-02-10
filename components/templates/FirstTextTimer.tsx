@@ -59,12 +59,9 @@ export default function FirstTextTimer({ page }: Props) {
   }).format(startDate);
 
   return (
-    <div className="yes-shell">
+    <div className="yes-shell timer-mode">
       <article className="yes-card">
-        <p className="yes-kicker">Valentine Update</p>
         <h1 className="yes-title">{page.title}</h1>
-        {page.subtitle ? <h2 className="yes-subtitle">{page.subtitle}</h2> : null}
-        {page.body ? <p className="yes-body">{page.body}</p> : null}
 
         <section className="time-since" aria-live="polite">
           <p className="time-label">Time passed since your first text:</p>
