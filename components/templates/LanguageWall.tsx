@@ -37,17 +37,18 @@ const DEFAULT_LANGUAGE_PHRASES = [
   "Nakupenda",
   "Ngiyakuthanda"
 ];
+const MIN_WALL_CHAR_COUNT = 52000;
 
 function buildLanguageWallText(phrases: string[]) {
   const pieces: string[] = [];
   let charCount = 0;
 
-  while (charCount < 19000) {
+  while (charCount < MIN_WALL_CHAR_COUNT) {
     for (const phrase of phrases) {
       const fragment = `${phrase}  •  `;
       pieces.push(fragment);
       charCount += fragment.length;
-      if (charCount >= 19000) {
+      if (charCount >= MIN_WALL_CHAR_COUNT) {
         break;
       }
     }
@@ -64,8 +65,10 @@ export default function LanguageWall({ page }: Props) {
 
   return (
     <div className="yes-shell language-wall-mode">
-      <section className="language-wall" aria-hidden="true">
-        <p className="language-wall-text">{buildLanguageWallText(phrases)}</p>
+      <section className="language-wall-scroll" aria-label="I love you language wall">
+        <div className="language-wall" aria-hidden="true">
+          <p className="language-wall-text">{buildLanguageWallText(phrases)}</p>
+        </div>
       </section>
     </div>
   );
