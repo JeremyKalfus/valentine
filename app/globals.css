@@ -41,14 +41,64 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.62;
-  mix-blend-mode: screen;
+  opacity: 0.46;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.home-petal-video,
+.home-petal-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-petal-video {
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+.home-gif-overlay.petals-video-ready .home-petal-video-a {
+  opacity: 0.7;
+}
+
+.home-gif-overlay.petals-video-ready .home-petal-video-b {
+  opacity: 0.42;
+}
+
+.home-gif-overlay.petals-video-ready .home-petal-fallback {
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+.home-gif-glow {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.015);
+  filter:
+    blur(1.35px)
+    brightness(1.08)
+    saturate(1.18)
+    hue-rotate(-3deg)
+    drop-shadow(0 0 11px rgba(255, 146, 186, 0.58))
+    drop-shadow(0 0 22px rgba(255, 171, 202, 0.28));
 }
 
 .home-gif-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  image-rendering: auto;
+  transform: scale(1.008);
+  filter:
+    blur(0.22px)
+    brightness(1.03)
+    saturate(1.08)
+    hue-rotate(-2deg)
+    contrast(1.03);
 }
 
 .cursor-aura {
