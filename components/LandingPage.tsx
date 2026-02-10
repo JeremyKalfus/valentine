@@ -28,65 +28,6 @@ export default function LandingPage() {
   const yesButtonRef = useRef<HTMLButtonElement>(null);
   const noButtonRef = useRef<HTMLButtonElement>(null);
   const cursorAuraRef = useRef<HTMLDivElement>(null);
-  const petalsOverlayRef = useRef<HTMLDivElement>(null);
-  const petalsVideoARef = useRef<HTMLVideoElement>(null);
-  const petalsVideoBRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const overlay = petalsOverlayRef.current;
-    const videoA = petalsVideoARef.current;
-    const videoB = petalsVideoBRef.current;
-    if (!overlay || !videoA || !videoB) {
-      return;
-    }
-    const overlayEl = overlay;
-    const videoAEl = videoA;
-    const videoBEl = videoB;
-
-    function clearVideoMode() {
-      overlayEl.classList.remove("petals-video-ready");
-    }
-
-    function activateVideoMode(duration: number) {
-      const safeDuration = Math.max(0.5, duration);
-      const halfCycle = Math.min(safeDuration / 2, Math.max(0, safeDuration - 0.01));
-      videoAEl.playbackRate = 1;
-      videoBEl.playbackRate = 0.998;
-      videoBEl.currentTime = halfCycle;
-
-      Promise.allSettled([videoAEl.play(), videoBEl.play()]).then((results) => {
-        const isPlayable = results.every((result) => result.status === "fulfilled");
-        if (isPlayable) {
-          overlayEl.classList.add("petals-video-ready");
-        } else {
-          clearVideoMode();
-        }
-      });
-    }
-
-    function syncAndStart() {
-      const duration = videoAEl.duration || videoBEl.duration;
-      if (!Number.isFinite(duration) || duration <= 0) {
-        return;
-      }
-      activateVideoMode(duration);
-    }
-
-    const handleError = () => clearVideoMode();
-    videoAEl.addEventListener("loadedmetadata", syncAndStart);
-    videoBEl.addEventListener("loadedmetadata", syncAndStart);
-    videoAEl.addEventListener("error", handleError);
-    videoBEl.addEventListener("error", handleError);
-
-    syncAndStart();
-
-    return () => {
-      videoAEl.removeEventListener("loadedmetadata", syncAndStart);
-      videoBEl.removeEventListener("loadedmetadata", syncAndStart);
-      videoAEl.removeEventListener("error", handleError);
-      videoBEl.removeEventListener("error", handleError);
-    };
-  }, []);
 
   useEffect(() => {
     const noButton = noButtonRef.current;
@@ -440,42 +381,10 @@ export default function LandingPage() {
     <>
       <div className="cursor-aura" ref={cursorAuraRef} aria-hidden="true" />
       <main className="home-page">
-        <div className="home-gif-overlay" ref={petalsOverlayRef} aria-hidden="true">
-          <video
-            ref={petalsVideoARef}
-            className="home-petal-video home-gif-image home-petal-video-a"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src="/assets/petals-loop.webm" type="video/webm" />
-            <source src="/assets/petals-loop.mp4" type="video/mp4" />
-          </video>
-          <video
-            ref={petalsVideoBRef}
-            className="home-petal-video home-gif-glow home-petal-video-b"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-          >
-            <source src="/assets/petals-loop.webm" type="video/webm" />
-            <source src="/assets/petals-loop.mp4" type="video/mp4" />
-          </video>
+        <div className="home-gif-overlay" aria-hidden="true">
           <Image
-            className="home-gif-glow home-petal-fallback"
-            src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
-            alt=""
-            fill
-            unoptimized
-            priority
-          />
-          <Image
-            className="home-gif-image home-petal-fallback"
-            src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
+            className="home-gif-image"
+            src="/assets/cherry-petals.gif"
             alt=""
             fill
             unoptimized
