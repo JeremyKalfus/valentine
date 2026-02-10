@@ -1,0 +1,106 @@
+# Language Wall Phrase Curation
+
+Sources used:
+- https://www.omniglot.com/language/phrases/iloveyou.htm
+- https://en.wiktionary.org/wiki/Appendix:Variations_of_%22I_love_you%22
+
+Curated phrase-only list for `languagePhrases`:
+
+- I love you
+- Je t'aime
+- Te amo
+- Te quiero
+- Eu te amo
+- Ti amo
+- Ich liebe dich
+- Ik hou van jou
+- Ek is lief vir jou
+- Jag älskar dig
+- Jeg elsker deg
+- Jeg elsker dig
+- Ég elska þig
+- Minä rakastan sinua
+- Ma armastan sind
+- Es tevi mīlu
+- Aš tave myliu
+- Kocham cię
+- Miluji tě
+- Ľúbim ťa
+- Ljubim te
+- Volim te
+- Те сакам
+- Обичам те
+- Te iubesc
+- Të dua
+- Σ’ αγαπώ
+- Seni seviyorum
+- Mən səni sevirəm
+- Мен сені сүйемін
+- Мен сени сүйөм
+- Men seni sevaman
+- Men seni söýýärin
+- مەن سېنى سۆيىمەن
+- Мин сине яратам
+- Мин һине яратам
+- Я тебя люблю
+- Я тебе кохаю
+- Я цябе кахаю
+- მე შენ მიყვარხარ
+- Ես քեզ սիրում եմ
+- אני אוהב אותך
+- أحبك
+- دوستت دارم
+- میں تم سے محبت کرتا ہوں
+- मैं तुमसे प्यार करता हूँ
+- আমি তোমাকে ভালোবাসি
+- ਮੈਂ ਤੈਨੂੰ ਪਿਆਰ ਕਰਦਾ ਹਾਂ
+- હું તને પ્રેમ કરું છું
+- मी तुझ्यावर प्रेम करतो
+- म तिमीलाई माया गर्छु
+- මම ඔයාට ආදරෙයි
+- நான் உன்னை காதலிக்கிறேன்
+- నేను నిన్ను ప్రేమిస్తున్నాను
+- ನಾನು ನಿನ್ನನ್ನು ಪ್ರೀತಿಸುತ್ತೇನೆ
+- ഞാൻ നിന്നെ സ്നേഹിക്കുന്നു
+- ମୁଁ ତୁମକୁ ଭଲ ପାଏ
+- মই তোমাক ভাল পাওঁ
+- မင်းကိုချစ်တယ်
+- ฉันรักเธอ
+- ຂ້ອຍຮັກເຈົ້າ
+- ខ្ញុំស្រឡាញ់អ្នក
+- Tôi yêu bạn
+- Aku cinta kamu
+- Saya cinta padamu
+- Mahal kita
+- Gihigugma tika
+- Ay-ayaten ka
+- Aku tresna karo kowe
+- Abdi bogoh ka anjeun
+- 我爱你
+- 我愛你
+- 愛してる
+- 사랑해
+- Би чамд хайртай
+- እወድሃለሁ
+- Waan ku jeclahay
+- Nakupenda
+- Ngiyakuthanda
+- Ndiyakuthanda
+- Mo nifẹ rẹ
+- A hụrụ m gị n'anya
+- Ina son ki
+- Ndagukunda
+- Ndinokuda
+- Tiako ianao
+- Mi amas vin
+- Te amo
+- Tá grá agam duit
+- Tha gaol agam ort
+- Rwy’n dy garu di
+- Me az kar
+- Maite zaitut
+- T'estimo
+- Quérote
+- Quiérote
+- T'aimi
+- Inħobbok
