@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 
@@ -380,6 +381,16 @@ export default function LandingPage() {
     <>
       <div className="cursor-aura" ref={cursorAuraRef} aria-hidden="true" />
       <main className="home-page">
+        <div className="home-gif-overlay" aria-hidden="true">
+          <Image
+            className="home-gif-image"
+            src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
+            alt=""
+            fill
+            unoptimized
+            priority
+          />
+        </div>
         <h1 className="home-title">
           Rebecca, will you be
           <br />
