@@ -1,21 +1,25 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import type { YesPage } from "@/lib/yes-pages";
+import { ANOTHER_PAGE_LABEL } from "@/lib/random-nav";
 
 type Props = {
-  page: Pick<YesPage, "buttonText">;
   nextRandomHref: string;
   children: ReactNode;
 };
 
-export default function YesPageScaffold({ page, nextRandomHref, children }: Props) {
+function withAnotherSource(href: string) {
+  const separator = href.includes("?") ? "&" : "?";
+  return `${href}${separator}source=another`;
+}
+
+export default function YesPageScaffold({ nextRandomHref, children }: Props) {
   return (
     <>
       {children}
       <nav className="yes-nav-bar" aria-label="Random page navigation">
-        <Link className="yes-nav-btn" href={nextRandomHref}>
-          {page.buttonText || "Another random page"}
+        <Link className="yes-nav-btn" href={withAnotherSource(nextRandomHref)}>
+          {ANOTHER_PAGE_LABEL}
         </Link>
         <Link className="yes-nav-link" href="/">
           Back to first page

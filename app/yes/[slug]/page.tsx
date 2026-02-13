@@ -19,7 +19,7 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (!page) {
     return (
-      <YesPageScaffold page={{ buttonText: "Try another random page" }} nextRandomHref="/yes/random">
+      <YesPageScaffold nextRandomHref="/yes/random">
         <main className="yes-shell">
           <section className="yes-card">
             <h1 className="yes-title">This page was not found.</h1>
@@ -34,7 +34,7 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (page.template === "falling-love") {
     return (
-      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+      <YesPageScaffold nextRandomHref={nextRandomHref}>
         <FallingLove page={page} />
       </YesPageScaffold>
     );
@@ -42,7 +42,7 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (page.template === "language-wall") {
     return (
-      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+      <YesPageScaffold nextRandomHref={nextRandomHref}>
         <LanguageWall page={page} />
       </YesPageScaffold>
     );
@@ -50,7 +50,7 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (page.template === "heart-wall") {
     return (
-      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+      <YesPageScaffold nextRandomHref={nextRandomHref}>
         <HeartWall page={page} />
       </YesPageScaffold>
     );
@@ -58,7 +58,7 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (page.template === "first-text-timer") {
     return (
-      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+      <YesPageScaffold nextRandomHref={nextRandomHref}>
         <FirstTextTimer page={page} />
       </YesPageScaffold>
     );
@@ -66,14 +66,14 @@ export default async function YesSlugPage({ params }: PageProps) {
 
   if (page.template === "photo-gallery") {
     return (
-      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+      <YesPageScaffold nextRandomHref={nextRandomHref}>
         <PhotoGallery page={page} />
       </YesPageScaffold>
     );
   }
 
   return (
-    <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+    <YesPageScaffold nextRandomHref={nextRandomHref}>
       <NoteTemplate page={page} />
     </YesPageScaffold>
   );
