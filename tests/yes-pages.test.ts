@@ -6,9 +6,15 @@ describe("yes-pages loader", () => {
   it("loads all markdown yes pages", () => {
     const pages = getAllYesPages();
 
-    expect(pages.length).toBeGreaterThanOrEqual(4);
+    expect(pages.length).toBeGreaterThanOrEqual(5);
     expect(pages.map((page) => page.slug)).toEqual(
-      expect.arrayContaining(["love-rain", "language-wall", "first-text-timer", "photo-memories"])
+      expect.arrayContaining([
+        "love-rain",
+        "language-wall",
+        "heart-wall",
+        "first-text-timer",
+        "photo-memories"
+      ])
     );
   });
 

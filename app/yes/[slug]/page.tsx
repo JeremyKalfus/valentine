@@ -1,4 +1,5 @@
 import FallingLove from "@/components/templates/FallingLove";
+import HeartWall from "@/components/templates/HeartWall";
 import FirstTextTimer from "@/components/templates/FirstTextTimer";
 import LanguageWall from "@/components/templates/LanguageWall";
 import NoteTemplate from "@/components/templates/NoteTemplate";
@@ -43,6 +44,14 @@ export default async function YesSlugPage({ params }: PageProps) {
     return (
       <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
         <LanguageWall page={page} />
+      </YesPageScaffold>
+    );
+  }
+
+  if (page.template === "heart-wall") {
+    return (
+      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+        <HeartWall page={page} />
       </YesPageScaffold>
     );
   }
