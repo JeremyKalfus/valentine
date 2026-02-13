@@ -21,8 +21,7 @@ export function GET(request: NextRequest) {
       if (easterEggLink) {
         return NextResponse.json({
           destination: easterEggLink,
-          external: true,
-          fallbackDestination: getInternalDestination(except)
+          external: true
         });
       }
     }

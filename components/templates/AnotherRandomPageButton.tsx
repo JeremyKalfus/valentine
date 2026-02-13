@@ -12,7 +12,6 @@ type Props = {
 type ResolveResponse = {
   destination?: string;
   external?: boolean;
-  fallbackDestination?: string;
 };
 
 function buildResolveHref(href: string) {
@@ -39,12 +38,7 @@ export default function AnotherRandomPageButton({ nextRandomHref }: Props) {
 
       const result = (await response.json()) as ResolveResponse;
       if (result.external && result.destination) {
-        const popup = window.open(result.destination, "_blank", "noopener,noreferrer");
-        if (!popup) {
-          window.location.href = result.destination;
-          return;
-        }
-        router.push(result.fallbackDestination || nextRandomHref);
+        window.open(result.destination, "_blank", "noopener,noreferrer");
         return;
       }
 
