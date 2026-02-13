@@ -1,3 +1,5 @@
+This was made by me (Jeremy) for my GF Rebecca. It was built to be highly modular so I can add new stuffy easily.
+
 # Valentine Site (Next.js)
 
 A modular valentine website built with Next.js, TypeScript, and file-based random YES pages.
