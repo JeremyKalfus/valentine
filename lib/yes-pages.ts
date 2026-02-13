@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { z } from "zod";
 
 const YES_PAGES_DIR = path.join(process.cwd(), "content", "yes-pages");
-const yesTemplates = ["falling-love", "language-wall", "first-text-timer", "note"] as const;
+const yesTemplates = ["falling-love", "language-wall", "first-text-timer", "photo-gallery", "note"] as const;
 
 const yesPageFrontmatterSchema = z
   .object({
@@ -14,6 +14,7 @@ const yesPageFrontmatterSchema = z
     template: z.enum(yesTemplates),
     buttonText: z.string().optional(),
     actionButtonText: z.string().optional(),
+    photoDir: z.string().optional(),
     body: z.string().optional(),
     fallingText: z.string().optional(),
     languagePhrases: z.array(z.string().min(1)).optional(),

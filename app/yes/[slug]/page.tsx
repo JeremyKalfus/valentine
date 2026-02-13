@@ -2,6 +2,7 @@ import FallingLove from "@/components/templates/FallingLove";
 import FirstTextTimer from "@/components/templates/FirstTextTimer";
 import LanguageWall from "@/components/templates/LanguageWall";
 import NoteTemplate from "@/components/templates/NoteTemplate";
+import PhotoGallery from "@/components/templates/PhotoGallery";
 import YesPageScaffold from "@/components/templates/YesPageScaffold";
 import { getYesPageBySlug } from "@/lib/yes-pages";
 
@@ -50,6 +51,14 @@ export default async function YesSlugPage({ params }: PageProps) {
     return (
       <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
         <FirstTextTimer page={page} />
+      </YesPageScaffold>
+    );
+  }
+
+  if (page.template === "photo-gallery") {
+    return (
+      <YesPageScaffold page={page} nextRandomHref={nextRandomHref}>
+        <PhotoGallery page={page} />
       </YesPageScaffold>
     );
   }
