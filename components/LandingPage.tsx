@@ -384,7 +384,7 @@ export default function LandingPage() {
         <div className="home-gif-overlay" aria-hidden="true">
           <Image
             className="home-gif-image"
-            src="/assets/cherry-petals.gif"
+            src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
             alt=""
             fill
             unoptimized
