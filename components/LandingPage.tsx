@@ -383,7 +383,15 @@ export default function LandingPage() {
       <main className="home-page">
         <div className="home-gif-overlay" aria-hidden="true">
           <Image
-            className="home-gif-image"
+            className="home-gif-image home-gif-base"
+            src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
+            alt=""
+            fill
+            unoptimized
+            priority
+          />
+          <Image
+            className="home-gif-image home-gif-glow"
             src="/assets/tumblr_mqpoziggwt1s5jjtzo1_640.gif"
             alt=""
             fill
