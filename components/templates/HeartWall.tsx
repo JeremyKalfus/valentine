@@ -4,28 +4,7 @@ type Props = {
   page: YesPage;
 };
 
-const HEART_PHRASES = [
-  "❤️",
-  "💖",
-  "💘",
-  "💝",
-  "💞",
-  "💕",
-  "💗",
-  "💓",
-  "💟",
-  "🩷",
-  "🩵",
-  "🧡",
-  "💚",
-  "💙",
-  "💜",
-  "🖤",
-  "🤎",
-  "💔",
-  "❣️",
-  "💌"
-];
+const HEART_PHRASES = ["💖", "💕", "💗", "❤️", "💝", "🫀"];
 const MIN_WALL_CHAR_COUNT = 52000;
 
 function buildHeartWallText() {

@@ -303,6 +303,9 @@ body {
 }
 
 .yes-nav-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   padding: 10px 22px;
@@ -315,6 +318,7 @@ body {
   text-decoration: none;
   box-shadow: 0 8px 18px rgba(126, 67, 87, 0.24);
   transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
 }
 
 .yes-nav-btn:hover,

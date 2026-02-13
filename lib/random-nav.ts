@@ -1,5 +1,5 @@
 export const ANOTHER_PAGE_LABEL = "Another random page";
-export const EASTER_EGG_ODDS = 100;
+export const EASTER_EGG_ODDS = 50;
 
 // Add more external easter egg links here.
 export const EASTER_EGG_LINKS = [
