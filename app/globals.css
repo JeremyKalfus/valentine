@@ -559,6 +559,9 @@ body {
 }
 
 .timer-mode .yes-card {
+  width: min(96vw, 960px);
+  display: flex;
+  justify-content: center;
   border: none;
   background: transparent;
   box-shadow: none;
@@ -567,10 +570,13 @@ body {
 }
 
 .timer-mode .time-since {
+  width: min(100%, 860px);
+  margin: 0 auto;
   padding: 12px 0 0;
   border: none;
   border-radius: 0;
   background: transparent;
+  text-align: center;
 }
 
 .timer-mode .time-cell {
@@ -592,6 +598,11 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
+}
+
+.timer-mode .time-grid {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .time-cell {
@@ -621,6 +632,10 @@ body {
 
 .text-log {
   margin-top: 14px;
+}
+
+.timer-mode .text-log {
+  text-align: center;
 }
 
 .text-line {

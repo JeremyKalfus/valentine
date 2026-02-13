@@ -61,8 +61,6 @@ export default function FirstTextTimer({ page }: Props) {
   return (
     <div className="yes-shell timer-mode">
       <article className="yes-card">
-        <h1 className="yes-title">{page.title}</h1>
-
         <section className="time-since" aria-live="polite">
           <p className="time-label">Time passed since your first text:</p>
           <div className="time-grid">

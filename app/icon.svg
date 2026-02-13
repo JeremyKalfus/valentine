@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Heart">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffb2d2" />
+      <stop offset="55%" stop-color="#ff5fa5" />
+      <stop offset="100%" stop-color="#d91f74" />
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="54" fill="#ffe8f2" />
+  <path
+    fill="url(#g)"
+    d="M128 221c-2 0-4-1-6-2-22-13-46-31-65-52-22-25-33-50-33-75 0-35 24-60 57-60 19 0 36 9 47 24 11-15 28-24 47-24 33 0 57 25 57 60 0 25-11 50-33 75-19 21-43 39-65 52-2 1-4 2-6 2z"
+  />
+</svg>
