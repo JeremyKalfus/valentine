@@ -87,7 +87,7 @@ export default function FirstTextTimer({ page }: Props) {
               {page.firstTextFromRebecca || "hello"}&quot;
             </p>
             <p className="text-line">
-              <span className="text-person">You:</span> &quot;{page.firstTextFromMe || "who's this"}
+              <span className="text-person">Jeremy:</span> &quot;{page.firstTextFromMe || "who's this"}
               &quot;
             </p>
             <p className="text-stamp">{timestamp} (America/New_York)</p>
